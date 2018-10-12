@@ -18,6 +18,7 @@ COPY . /opt/democracy.io
 COPY ./config/custom-environment-variables.json.example /opt/democracy.io/config/custom-environment-variables.json
 
 ENTRYPOINT ["./entrypoint.sh"]
+EXPOSE 3000
 CMD ["npm", "install"]
 CMD ["npm", "run build:prod"]
 CMD ["npm", "run test"]
