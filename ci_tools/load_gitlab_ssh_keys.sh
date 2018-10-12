@@ -6,4 +6,4 @@ echo "$GITLAB_SSH_PRIVATE_KEY"
 cat ~/.ssh/id_rsa
 chmod 0600 ~/.ssh/id_rsa
 #add aptible to known hosts
-ssh-keyscan gitlab.call9.com | tee -a ~/.ssh/known_hosts
+ssh-keyscan beta.aptible.com | tee -a ~/.ssh/known_hosts
