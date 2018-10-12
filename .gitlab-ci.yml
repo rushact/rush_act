@@ -1,4 +1,9 @@
-push_to_production_branch:
+image: call9/ruby-tex:2.3
+
+stages:
+  - deploy_to_production
+
+deploy_to_production:
   stage: update_production_branch
   script:
     - ci_tools/load_gitlab_ssh_keys.sh
