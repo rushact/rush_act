@@ -23,4 +23,3 @@ EXPOSE 3000
 RUN npm install --production
 RUN npm run build:prod
 RUN npm run test
-
