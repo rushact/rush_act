@@ -7,7 +7,7 @@ deploy_to_production:
   stage: deploy_to_production
   script:
     - ci_tools/load_gitlab_ssh_keys.sh
-    - git push -f git@beta.aptible.com:c9-production/rush-act-site.git
+    - git push -f git@beta.aptible.com:c9-production/rush-act-site.git $CI_COMMIT_SHA:master
   allow_failure: false
   environment:
     name: production
