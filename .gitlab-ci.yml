@@ -4,7 +4,7 @@ stages:
   - deploy_to_production
 
 deploy_to_production:
-  stage: update_production_branch
+  stage: deploy_to_production
   script:
     - ci_tools/load_gitlab_ssh_keys.sh
     - git push -f git@beta.aptible.com:c9-production/rush-act-site.git
