@@ -2,7 +2,7 @@ push_to_production_branch:
   stage: update_production_branch
   script:
     - ci_tools/load_gitlab_ssh_keys.sh
-    - git push -f git@beta.aptible.com:c9-production/app-ehr-prod.git
+    - git push -f git@beta.aptible.com:c9-production/rush-act-site.git
   allow_failure: false
   environment:
     name: production
