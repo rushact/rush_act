@@ -18,4 +18,5 @@ COPY . /opt/democracy.io
 COPY ./config/custom-environment-variables.json.example /opt/democracy.io/config/custom-environment-variables.json
 
 ENTRYPOINT ["./entrypoint.sh"]
+EXPOSE 443
 CMD ["node", "server.js"]
