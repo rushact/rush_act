@@ -17,9 +17,10 @@ WORKDIR /opt/democracy.io
 COPY . /opt/democracy.io
 COPY ./config/custom-environment-variables.json.example /opt/democracy.io/config/custom-environment-variables.json
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENV PORT 3000
 EXPOSE 3000
-CMD ["npm", "install"]
-CMD ["npm", "run build:prod"]
-CMD ["npm", "run test"]
-CMD ["node", "server.js"]
+
+RUN npm install --production
+RUN npm run build:prod
+RUN npm run test
+
