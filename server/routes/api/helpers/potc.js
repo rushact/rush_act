@@ -8,7 +8,7 @@ var models = require('../../../../models');
 
 
 var makePOTCMessage = function(message, campaignTag) {
-
+  console.log('this is potc.makePOTCMessage');
   var addrComponents = message.canonicalAddress.components;
 
   var fields = {

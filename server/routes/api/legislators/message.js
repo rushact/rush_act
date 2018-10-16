@@ -16,6 +16,7 @@ var crypto = require('crypto');
 
 
 var post = function (req, res) {
+  console.log('hit the post route /api/1/legislators/message');
   var messages = apiHelpers.getModelData(req.body, models.Message);
   var potcMessages = map(messages, function(message) {
     var tag = req.app.locals.CONFIG.get('CAMPAIGNS.DEFAULT_TAG');
@@ -24,6 +25,7 @@ var post = function (req, res) {
   });
 
   var onComplete = function(err, data) {
+    console.log('callback to the callback to the message')
     if (err)
       return res.status(400).json(resHelpers.makeError(err));
 
@@ -36,6 +38,7 @@ var post = function (req, res) {
   async.parallel(map(potcMessages, function(message) {
     return function(cb) {
       potc.sendMessage(message, req.app.locals.CONFIG, function(err, res) {
+        console.log('callback to the message');
         res.bioguideId = message['bio_id'];
         cb(err, res);
       });
