@@ -18,7 +18,7 @@ nestedDescribe('routes.api.location', function() {
 
   var mockHTTPCalls = function() {
     var url = '/street-address?street=100%20Test%20St%2C%20San%20Francisco%2C%2094110';
-    var ssc = config.get('SERVER.CREDENTIALS.SMARTY_STREETS');
+    var ssc = process.env.SMARTY_STREETS_ID ? { ID: process.env.SMARTY_STREETS_ID, TOKEN: process.env.SMARTY_STREETS_TOKEN } : config.get('SERVER.CREDENTIALS.SMARTY_STREETS');
     url += '&auth-id='+ssc.ID+'&auth-token='+ssc.TOKEN;
     nock(config.get('SERVER.API.SMARTY_STREETS.ADDRESS_URL'))
       .get(url)

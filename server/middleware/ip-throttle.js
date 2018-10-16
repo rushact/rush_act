@@ -8,7 +8,7 @@ var isUndefined = require('lodash.isundefined');
 var redis = require('redis');
 var tokenThrottleRedis = require('tokenthrottle-redis');
 
-var IP_SALT = require('config').get('SERVER.CREDENTIALS.IP.SALT');
+var IP_SALT = process.env.IP_SALT || require('config').get('SERVER.CREDENTIALS.IP.SALT');
 
 module.exports = function(config) {
 

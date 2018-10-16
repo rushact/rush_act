@@ -12,8 +12,8 @@ var makeSmartyStreetsUrl = function(baseURL, pathname, params, ssCreds) {
   var ssURL = url.parse(baseURL);
   ssURL.pathname = pathname;
 
-  params['auth-id'] = ssCreds.ID;
-  params['auth-token'] = ssCreds.TOKEN;
+  params['auth-id'] = process.env.SMARTY_STREETS_ID || ssCreds.ID;
+  params['auth-token'] = process.env.SMARTY_STREETS_TOKEN || ssCreds.TOKEN;
   ssURL.query = params;
 
   return url.format(ssURL);
