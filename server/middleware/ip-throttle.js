@@ -35,6 +35,7 @@ module.exports = function(config) {
 
   return function(req, res, next) {
     var ipAddr = req.ip;
+    console.log(IP_SALT);
     bcrypt.hash(ipAddr, IP_SALT, function (err, hashedIpAddr) {
       if (err) {
         next(new Error('could not throttle IP address'));
