@@ -8,16 +8,23 @@ html {
   display: none !important;
 }
 body {
-  background-image: url('/static/{$VERSION}/img/bg-fade.jpg');
-  background-size: cover auto;
+  background-image: url('/static/{$VERSION}/img/bg-fade-2.jpg');
+  background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top center;
-  background-color: #eeeeee;
+  background-color: #fff;
   // min-height: 100%;
   font-family: 'OpenSans', sans-serif;
   font-weight: 300;
-
+  width: 100%;
 }
+
+@media only screen and (max-width: 1100px) {
+  body {
+    background-size: 1200px auto;
+  }
+}
+
 [ng-click],[data-ng-click],[x-ng-click] {
     cursor: pointer;
 }
@@ -47,6 +54,20 @@ a.ondark {
   //margin: 0 auto;
   // @extend .ro-gradient;
 }
+
+h3 {
+  font-family: 'DroidSerif', serif;
+  font-size: 24px;
+  text-align: center;
+  color: #646464;
+}
+.text-description {
+  text-align: left;
+  @media (max-width: $screen-sm-max) {
+    font-size: 18px;
+  }
+}
+
 h1 {
   font-family: 'DroidSerif', serif;
   font-size: 60px;
@@ -129,7 +150,7 @@ h1.header {
     background-color: #000;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    background-image: linear-gradient(to right, #FF8900, $pink);
+    background-image: linear-gradient(to right, #00AAEF, $blue);
 
   }
   label {
@@ -151,13 +172,13 @@ h1.header {
   background-size: cover;
 }
 .checkbox input[type="checkbox"]:checked  + label:before {
-  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" enable-background="new 0 0 50 50"><path d="M25 50c-13.785 0-25-11.215-25-25s11.215-25 25-25 25 11.215 25 25-11.215 25-25 25zm0-48.482c-12.951 0-23.487 10.534-23.487 23.482s10.536 23.482 23.487 23.482c12.95 0 23.486-10.534 23.486-23.482s-10.535-23.482-23.486-23.482zM39 18.294c0 .494-.169.914-.505 1.259l-13.08 13.411-2.457 2.519c-.338.346-.746.517-1.228.517s-.892-.173-1.228-.518l-2.457-2.519-6.54-6.705c-.338-.347-.505-.765-.505-1.259 0-.494.169-.914.505-1.259l2.457-2.519c.338-.347.746-.518 1.228-.518s.892.173 1.228.518l5.311 5.465 11.851-12.168c.337-.347.745-.518 1.226-.518.482 0 .892.173 1.228.518l2.457 2.519c.34.343.509.763.509 1.257z" fill="%23EE355B"/></svg>');
+  background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" enable-background="new 0 0 50 50"><path d="M25 50c-13.785 0-25-11.215-25-25s11.215-25 25-25 25 11.215 25 25-11.215 25-25 25zm0-48.482c-12.951 0-23.487 10.534-23.487 23.482s10.536 23.482 23.487 23.482c12.95 0 23.486-10.534 23.486-23.482s-10.535-23.482-23.486-23.482zM39 18.294c0 .494-.169.914-.505 1.259l-13.08 13.411-2.457 2.519c-.338.346-.746.517-1.228.517s-.892-.173-1.228-.518l-2.457-2.519-6.54-6.705c-.338-.347-.505-.765-.505-1.259 0-.494.169-.914.505-1.259l2.457-2.519c.338-.347.746-.518 1.228-.518s.892.173 1.228.518l5.311 5.465 11.851-12.168c.337-.347.745-.518 1.226-.518.482 0 .892.173 1.228.518l2.457 2.519c.34.343.509.763.509 1.257z" fill="%2300AAEF"/></svg>');
   background-size: cover;
 }
 .checkbox input[type="checkbox"]:disabled  + label:before {
   background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" enable-background="new 0 0 50 50"><path d="M25 50c-13.785 0-25-11.215-25-25s11.215-25 25-25 25 11.215 25 25-11.215 25-25 25zm0-48.482c-12.951 0-23.487 10.534-23.487 23.482s10.536 23.482 23.487 23.482c12.95 0 23.486-10.534 23.486-23.482s-10.535-23.482-23.486-23.482z" fill="#E6E7E8"/><g fill="#E6E7E8"><path d="M11.919 31.01l19.091-19.091c.972-.972 2.563-.972 3.536 0l3.536 3.536c.972.972.972 2.563 0 3.536l-19.092 19.09c-.972.972-2.563.972-3.536 0l-3.536-3.536c-.972-.971-.972-2.562.001-3.535zM31.01 38.081l-19.091-19.091c-.972-.972-.972-2.563 0-3.536l3.536-3.536c.972-.972 2.563-.972 3.536 0l19.09 19.092c.972.972.972 2.563 0 3.536l-3.536 3.536c-.971.972-2.562.972-3.535-.001z"/></g></svg>');
   background-size: cover;
-} 
+}
 .checkbox input[type="checkbox"] + label:before {
     content:" ";
     display:inline-block;
@@ -198,7 +219,7 @@ h1.header {
   border-radius: 0;
   border-width: 0;
   border-bottom-left-radius: 3px;
-  background-color: $pink;
+  background-color: $light-blue;
   color: #fff;
   padding: 0px 10px 2px 10px;
   font-size: 13px;
@@ -206,7 +227,7 @@ h1.header {
   line-height: 21px;
   @extend a.ondark;
   &:hover, &:active, &:focus {
-    background-color: $pink;
+    background-color: $light-blue;
   }
 }
 label {
@@ -216,6 +237,11 @@ label {
   color: $gray;
   font-weight: 400;
 }
+
+.helper-text {
+  color: #9d9d9d;
+}
+
 .form-control {
   box-shadow: none;
 }
@@ -233,11 +259,11 @@ label {
 .form-control {
   border-radius: $border-radius;
 }
-.btn-orange {
+.btn-red {
   @extend a.ondark;
-  color: #3C3C3C;
+  color: #F77062;
   background-color: #fff;
-  border: 1px solid #f85628;
+  border: 1px solid #F77062;
   margin-left: 0 !important;
   font-weight: 300;
   border-radius: $border-radius;
@@ -247,10 +273,10 @@ label {
     font-weight: 300;
   }
 }
-.btn-lg.btn-orange {
+.btn-lg.btn-red {
   padding: 15px 30px;
 }
-.input-group .btn-orange {
+.input-group .btn-red {
   padding: 0 30px;
 }
 .btn[disabled] {
