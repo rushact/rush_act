@@ -35,10 +35,10 @@ module.exports = function(config) {
 
   return function(req, res, next) {
     var ipAddr = req.ip;
-    console.log(IP_SALT);
     bcrypt.hash(ipAddr, IP_SALT, function (err, hashedIpAddr) {
+      console.log('hello IP SALT', IP_SALT);
       if (err) {
-        next(new Error('could not throttle IP address'));
+        next(new Error(`could not throttle IP address ${IP_SALT}`));
       }
 
       throttle.rateLimit(hashedIpAddr, function (err, limited) {
