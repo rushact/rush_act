@@ -3,7 +3,7 @@ var Raven = require('raven-js');
 var dioConfig = require('../../.build/dio-app-settings');
 
 var ravenClient;
-
+console.log('this is in raven-client dioConfig', dioConfig);
 if (dioConfig.SENTRY_DSN) {
     ravenClient = Raven.config(dioConfig.SENTRY_DSN)
     .addPlugin(require('raven-js/plugins/angular'), angular)
