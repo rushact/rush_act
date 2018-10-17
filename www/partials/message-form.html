@@ -155,42 +155,6 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group" ng-repeat="legislator in topicOptions">
-            <label for="inputTopic">[[legislator.name]]'s Topic</label>
-            <select class="form-control"
-                    name="topic"
-                    id="inputTopic"
-                    ng-model="topicOptions[legislator.bioguideId].selected"
-                    ng-required="true"
-                    ng-focus="$parent.topicFocus = true"
-                    ng-blur="$parent.topicFocus = false"
-                    >
-              <option ng-repeat="topic in legislator.options" value="[[topic]]">
-                [[topic]]
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <div class="col-sm-6 hidden-xs form-note" ng-show="topicFocus">
-          <div class="panel panel-compact" id="prefixNote">
-            <div class="panel-body">
-                These topic fields are required by Members of Congress to submit messages via their contact forms.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group emailSignup" >
-        <p>This is a free service of the <a href="https://eff.org">Electronic Frontier Foundation</a>, a 501(c)(3) non-profit dedicated to fighting for your rights in the digital age.</p>
-        <div class="checkbox">
-          <input type="checkbox" id="emailSignup" ng-model="joinEmailList" unchecked>
-          <label for="emailSignup">Want to stay up to date with EFF and our work? Click this button to sign up for email updates (<a href="https://www.eff.org/policy">privacy policy</a>).</label>
-        </div>
-      </div>
-
       <button type="submit"
               class="btn btn-red btn-lg"
               ng-click="send()"

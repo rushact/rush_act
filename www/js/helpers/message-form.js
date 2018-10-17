@@ -20,8 +20,8 @@ var models = require('../../../models');
  * @param legislator
  */
 var parseTopicOptions = function(topicElem, legislator) {
-  var options = isArray(topicElem.optionsHash) ?
-    topicElem.optionsHash : keys(topicElem.optionsHash);
+  // Hacking for RUSH act - which is Health topic
+  var options = ['Health']
 
   return {
     bioguideId: legislator.bioguideId,
