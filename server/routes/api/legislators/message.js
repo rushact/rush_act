@@ -16,14 +16,6 @@ const {google} = require('googleapis');
 var crypto = require('crypto');
 
 var post = function (req, res) {
-  // sheets.spreadsheets.get({ spreadsheetId: '1n8A9MYUAP3cROKZDaVZkBPqpn0Y4bXRyPN5wZDVOKL4', includeGridData: true }).then((value) => {
-  //   debugger;
-  //   console.log(`Sheet: ${JSON.stringify(value.data)}`)
-  // }, (err) => {
-  //   debugger;
-  //   console.log(`Sheet error: ${err}`)
-  // })
-
   console.log('hit the post route /api/1/legislators/message');
   var messages = apiHelpers.getModelData(req.body, models.Message);
 
@@ -47,7 +39,7 @@ var post = function (req, res) {
     spreadsheetId: '1n8A9MYUAP3cROKZDaVZkBPqpn0Y4bXRyPN5wZDVOKL4',
     insertDataOption: 'INSERT_ROWS',
     valueInputOption: 'RAW',
-    range: 'Sheet1!A:C',
+    range: 'Sheet1!A:J',
     requestBody: {
       values
     }
@@ -74,9 +66,8 @@ var post = function (req, res) {
   });
 
   sheets.spreadsheets.values.append(query).then((value) => {
-    debugger;
+    console.log('Appended to sheet')
   }, (err) => {
-    debugger;
     console.log(`Sheet error: ${err}`)
   })
 
