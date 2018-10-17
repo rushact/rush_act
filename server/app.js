@@ -34,7 +34,7 @@ app.set('view engine', 'dust');
 // NOTE: this assumes you're running behind an nginx instance or other proxy
 app.enable('trust proxy');
 
-app.use(serveFavicon(path.join(BUILD_DIR, 'static', config.VERSION, 'img/favicon.ico')));
+app.use(serveFavicon(path.join(BUILD_DIR, 'static', config.VERSION, 'img/favicon.png')));
 // NOTE: EFF doesn't use CDNs, so rely on static serve w/ a caching layer in front of it in prod
 app.use(serveStatic(BUILD_DIR, config.get('STATIC')));
 app.use(morgan('combined'));

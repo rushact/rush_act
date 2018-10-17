@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Democracy.io - Contact Members of Congress</title>
+  <title>RUSH Act- Contact Members of Congress</title>
   <base href="/">
 
   <meta charset="utf-8">
@@ -17,17 +17,15 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-  <meta property='og:url' content='https://democracy.io/'>
-  <meta property='og:title' content='Democracy.io - Contact your Members of Congress'>
-  <meta property='og:description' content="Democracy thrives when people’s voices are heard. Send a message to your legislatures using EFF's simple new tool.">
-  <meta property='og:image' content='https://democracy.io/static/{CONFIG.VERSION}/img/opengraph.jpg'>
+  <meta property='og:url' content='https://rushact.org/'>
+  <meta property='og:title' content='Support the RUSH Act'>
+  <meta property='og:description' content="Help bring emergency and critical care to nursing home patients.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@eff">
   <meta name="twitter:creator" content="@eff">
-  <meta name="twitter:title" content="Democracy.io: Contact Congress easily">
-  <meta name="twitter:description" content="Democracy thrives when people’s voices are heard. Contact your representatives simply and easily.">
-  <meta name="twitter:image" content="https://democracy.io/static/{CONFIG.VERSION}/img/opengraph.jpg">
+  <meta name="twitter:title" content="Support the RUSH Act">
+  <meta name="twitter:description" content="Healthcare can do better for nursing home patients, and the RUSH Act will help ensure that it does.">
 
   <link rel="stylesheet" href="/static/{CONFIG.VERSION}/css/dio.min.css" />
 </head>

@@ -1,10 +1,10 @@
-{  
-  "P000197":{  
-    "required_actions":[  
-      {  
+{
+  "P000197":{
+    "required_actions":[
+      {
         "value":"$NAME_PREFIX",
         "maxlength":null,
-        "options_hash":[  
+        "options_hash":[
           "Mr.",
           "Mrs.",
           "Ms.",
@@ -31,50 +31,50 @@
           "Technical Sergeant"
         ]
       },
-      {  
+      {
         "value":"$NAME_FIRST",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$NAME_LAST",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_STREET",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_CITY",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_ZIP5",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$EMAIL",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$SUBJECT",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$MESSAGE",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_STATE_POSTAL_ABBREV",
         "maxlength":null,
-        "options_hash":[  
+        "options_hash":[
           "AL",
           "AK",
           "AZ",
@@ -128,10 +128,10 @@
           "WY"
         ]
       },
-      {  
+      {
         "value":"$TOPIC",
         "maxlength":null,
-        "options_hash":[  
+        "options_hash":[
           "Agriculture and Food",
           "Animals",
           "Armed Forces and National Security",
@@ -168,49 +168,49 @@
       }
     ]
   },
-  "F000062":{  
+  "F000062":{
     "defunct":false,
     "contact_url":null,
-    "required_actions":[  
-      {  
+    "required_actions":[
+      {
         "value":"$NAME_FIRST",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$NAME_LAST",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_STREET",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_CITY",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_ZIP5",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$EMAIL",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$MESSAGE",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$TOPIC",
         "maxlength":null,
-        "options_hash":{  
+        "options_hash":{
           "Abortion":"Abortion.Hlth",
           "Agriculture":"ag",
           "Animals":"Anim",
@@ -249,54 +249,54 @@
       }
     ]
   },
-  "H001075":{  
+  "H001075":{
     "defunct":false,
     "contact_url":null,
-    "required_actions":[  
-      {  
+    "required_actions":[
+      {
         "value":"$NAME_FIRST",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$NAME_LAST",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_STREET",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_CITY",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$ADDRESS_ZIP5",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$EMAIL",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$SUBJECT",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$MESSAGE",
         "maxlength":null,
         "options_hash":null
       },
-      {  
+      {
         "value":"$NAME_PREFIX",
         "maxlength":null,
-        "options_hash":[  
+        "options_hash":[
           "Mr.",
           "Mrs.",
           "Ms.",
@@ -311,10 +311,10 @@
           "Senator"
         ]
       },
-      {  
+      {
         "value":"$TOPIC",
         "maxlength":null,
-        "options_hash":[  
+        "options_hash":[
           "Abortion",
           "Adoption",
           "Aging",

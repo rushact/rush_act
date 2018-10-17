@@ -12,6 +12,7 @@ var makeResponse = function(data) {
 
 
 var makeError = function(err, opt_statusCode) {
+  console.log('makeError')
   return {
     status: 'error',
     message: err.message,

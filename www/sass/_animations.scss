@@ -24,13 +24,13 @@ body {
 }
 
 
-// Form element transitions 
+// Form element transitions
 .repOption, .write-message .whitebox-container > div, .ng-enter #addressInputs > div {
   @extend .animated;
   animation-name: fadeUp30;
   @for $i from 1 through 10 {
-      &:nth-child(#{$i}) { 
-       @include animation-delay(0.1s * $i + 0.5s); 
+      &:nth-child(#{$i}) {
+       @include animation-delay(0.1s * $i + 0.5s);
       }
     }
 }
@@ -75,9 +75,6 @@ body {
   }
 }
 #video-container {
-  div {
-    opacity: 0;
-  }
   &.ng-enter {
     div {
       @extend .animated;
@@ -104,7 +101,7 @@ body {
   div#progress-bar {
     opacity: 1;
   }
-  
+
   &[data-pagefrom="location"] {
     .header h1 {
       @media (min-width: $screen-sm-min) {
@@ -410,7 +407,7 @@ body {
   @extend .animated;
   opacity: 1;
   fill: none;
-  stroke: $pink;
+  stroke: $light-blue;
   stroke-width: 1px;
   stroke-linejoin: butt;
   stroke-dasharray: 130;

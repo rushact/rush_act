@@ -9,37 +9,37 @@
        class="content">
 
     <div class="main">
-    
+
       {>"components/nav-bar"/}
 
       <noscript>
-      <div class="text-center"><h3>Democracy.io requires Javascript to work.</h3><h4>Please load the site using a browser that supports Javascript.</h4></div></noscript>
+      <div class="text-center"><h3>This website requires Javascript to work.</h3><h4>Please load the site using a browser that supports Javascript.</h4></div></noscript>
 
       <div ng-switch ng-cloak on="pageName">
         <div ng-switch-when="home"
              class="header"
              dio-write-to-them-animation=""
-             animate-msg="Write to your representatives"
+             animate-msg="Support the RUSH Act"
              initial-delay="500"
              speed="30"
              show-full="pageFrom !== 'new-visit'">
         </div>
-        <h1 ng-switch-when="location" 
+        <h1 ng-switch-when="location"
              class="header">
              Who do you want to write to?
         </h1>
-        <h1 ng-switch-when="compose" 
+        <h1 ng-switch-when="compose"
              class="header">
-             Write your message      
+             Write your message
         </h1>
-        <h1 ng-switch-when="captcha" 
+        <h1 ng-switch-when="captcha"
               class="header">
              Verify that you're a human
         </h1>
-        <h1 ng-switch-when="thanks" 
+        <h3 ng-switch-when="thanks"
               class="header">
-             Message sent!
-        </h1>
+             Message sent! Thank you for sharing your voice and doing something good for nursing home patients!
+        </h2>
       </div>
 
       {>"components/progress-bar"/}
