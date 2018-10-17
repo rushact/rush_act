@@ -21,11 +21,16 @@ var makeSmartyStreetsUrl = function(baseURL, pathname, params, ssCreds) {
 
 
 var verifyAddress = function(params, config, cb) {
+  const configDetails = process.env.SMARTY_STREETS_ID ?
+    {
+      ID: process.env.SMARTY_STREETS_ID,
+      TOKEN: process.env.SMARTY_STREETS_TOKEN
+    } : config.get('CREDENTIALS.SMARTY_STREETS');
   var ssURL = makeSmartyStreetsUrl(
     config.get('API.SMARTY_STREETS.ADDRESS_URL'),
     'street-address',
     params,
-    config.get('CREDENTIALS.SMARTY_STREETS')
+    configDetails
   );
 
   var requestParams = {

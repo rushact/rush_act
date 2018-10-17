@@ -54,14 +54,14 @@ var post = function (req, res) {
   }
 
   const oauth2Client = new google.auth.OAuth2(
-    '233973318239-vjqqtsp9gurpl05ip7vhikma91vr2dgl.apps.googleusercontent.com',
-    'uKxoFG-pCuoOrlUKVp6aA_i8',
+    process.env.GOOGLE_API_CLIENT_ID || req.app.locals.CONFIG.get('CREDENTIALS.GOOGLE_API.CLIENT_ID'),
+    process.env.GOOGLE_API_SECRET_KEY || req.app.locals.CONFIG.get('CREDENTIALS.GOOGLE_API.SECRET_KEY'),
     'http://localhost'
   );
 
   const token =  {
-    access_token: 'ya29.GlwaBYQhARVMnBqKP3yrnFV3swf7Rk-SYrg3uh-Dwfj6IcdjaiGGK7ZScmerP5KpAwz2p_r6OsQtLgpDGG8krU1zx7vOXmvzMwQU_-_kHDR5JIWXPXKQoHhaPrelvw',
-    refresh_token: '1/eZHcyG-7g2reQBlkZsb0_c6W8lwCtKGtOBvzPaZcew4',
+    access_token: process.env.GOOGLE_API_ACCESS_TOKEN || req.app.locals.CONFIG.get('CREDENTIALS.GOOGLE_API.ACCESS_TOKEN'),
+    refresh_token: process.env.GOOGLE_API_REFRESH_TOKEN || req.app.locals.CONFIG.get('CREDENTIALS.GOOGLE_API.REFRESH_TOKEN'),
     scope: ["https://www.googleapis.com/auth/spreadsheets"],
     expires_in: 1512516678
   }
