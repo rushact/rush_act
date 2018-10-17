@@ -10,7 +10,6 @@ var services = require('./services');
 var Raven = require('./raven-client');
 
 var dioConfig = require('../../.build/dio-app-settings');
-console.log('this is the dioConfig in www app', dioConfig);
 
 var democracyAppRequires = ['ngRoute', 'angular-locker', 'ngAnimate', 'ngSanitize',
                             'ui.mask', 'angular-inview','duScroll'];

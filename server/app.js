@@ -53,12 +53,6 @@ middleware(apiDef, app, function(err, middleware) {
   app.use(middleware.parseRequest());
   app.use(middleware.validateRequest());
 
-  app.use((req, res, next) => {
-    console.log('post parseRequest middleware');
-    console.log(req.body);
-    next();
-  });
-
   // Only throttle requests to the messages endpoints
   // var pathRe = /^\/api.*\/message$/;
   // app.use(pathRe, ipThrottle(config.get('REQUEST_THROTTLING')));
@@ -70,53 +64,17 @@ middleware(apiDef, app, function(err, middleware) {
     csp: false
   }));
 
-  app.use((req, res, next) => {
-    console.log('post lusca middleware');
-    console.log(req.body);
-    next();
-  });
-
   app.use(apiErrorHandler());
-
-  app.use((req, res, next) => {
-    console.log('post error handling middleware');
-    console.log(req.body);
-    next();
-  });
 
   var appRouter = require('./routes/app/router')([ngXsrf()]);
   app.use(appRouter);
 
-  app.use((req, res, next) => {
-    console.log('post ./routes/app/router line 93 middleware');
-    console.log(req.body);
-    next();
-  });
-
   var apiRouter = require('./routes/api/router')();
   app.use(apiDef.basePath, apiRouter);
 
-  app.use((req, res, next) => {
-    console.log('post ./routes/api/router middleware');
-    console.log(req.body);
-    next();
-  });
-
   app.use(Raven.requestHandler());
 
-  app.use((req, res, next) => {
-    console.log('post raven request handler middleware');
-    console.log(req.body);
-    next();
-  });
-
   app.use(Raven.errorHandler());
-
-  app.use((req, res, next) => {
-    console.log('post raven error handler middleware');
-    console.log(req.body);
-    next();
-  });
 
   app.listen(port, function () {
     console.log('Server listening on http://localhost:%s', port);

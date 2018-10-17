@@ -47,7 +47,6 @@ var getFormElementsForRepIdsFromPOTC = function(bioguideIds, config, cb) {
  * @param cb
  */
 var sendMessage = function(message, config, cb) {
-  console.log('i\'m sending a message');
   var potcURL = makePOTCUrl(
     'fill-out-form',
     config.get('API.POTC_BASE_URL'),
