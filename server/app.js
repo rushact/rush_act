@@ -39,7 +39,7 @@ app.use(serveFavicon(path.join(BUILD_DIR, 'static', config.VERSION, 'img/favicon
 app.use(serveStatic(BUILD_DIR, config.get('STATIC')));
 app.use(morgan('combined'));
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 2000;
 middleware(apiDef, app, function(err, middleware) {
   if (err) {
     throw err;
