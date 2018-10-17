@@ -1,9 +1,6 @@
 var Raven = require('raven');
 var config = require('./config');
-console.log(Raven);
-console.log(config.CREDENTIALS.SENTRY_DSN);
 var ravenClient = Raven.config(config.CREDENTIALS.SENTRY_DSN).install();
-console.log(ravenClient);
 // Also log Raven errors to console if in dev mode
 
 if (process.env.NODE_ENV === 'development') {

@@ -33,11 +33,7 @@ app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'dust');
 // NOTE: this assumes you're running behind an nginx instance or other proxy
 app.enable('trust proxy');
-app.use((req, res, next) => {
-  console.log('I made it here');
-  console.log(req);
-  next();
-});
+
 app.use(serveFavicon(path.join(BUILD_DIR, 'static', config.VERSION, 'img/favicon.png')));
 // NOTE: EFF doesn't use CDNs, so rely on static serve w/ a caching layer in front of it in prod
 app.use(serveStatic(BUILD_DIR, config.get('STATIC')));
@@ -58,14 +54,20 @@ middleware(apiDef, app, function(err, middleware) {
   app.use(middleware.validateRequest());
 
   app.use((req, res, next) => {
-    console.log('look at my request NOW');
-    console.log(req);
+    console.log('post parseRequest middleware');
+    console.log(req.body);
     next();
   });
 
   // Only throttle requests to the messages endpoints
   var pathRe = /^\/api.*\/message$/;
   app.use(pathRe, ipThrottle(config.get('REQUEST_THROTTLING')));
+
+  app.use((req, res, next) => {
+    console.log('post request throttling');
+    console.log(req.body);
+    next();
+  });
 
   app.use(lusca({
     csrf: false,
@@ -74,16 +76,53 @@ middleware(apiDef, app, function(err, middleware) {
     csp: false
   }));
 
+  app.use((req, res, next) => {
+    console.log('post lusca middleware');
+    console.log(req.body);
+    next();
+  });
+
   app.use(apiErrorHandler());
+
+  app.use((req, res, next) => {
+    console.log('post error handling middleware');
+    console.log(req.body);
+    next();
+  });
 
   var appRouter = require('./routes/app/router')([ngXsrf()]);
   app.use(appRouter);
 
+  app.use((req, res, next) => {
+    console.log('post ./routes/app/router line 93 middleware');
+    console.log(req.body);
+    next();
+  });
+
   var apiRouter = require('./routes/api/router')();
   app.use(apiDef.basePath, apiRouter);
 
+  app.use((req, res, next) => {
+    console.log('post ./routes/api/router middleware');
+    console.log(req.body);
+    next();
+  });
+
   app.use(Raven.requestHandler());
+
+  app.use((req, res, next) => {
+    console.log('post raven request handler middleware');
+    console.log(req.body);
+    next();
+  });
+
   app.use(Raven.errorHandler());
+
+  app.use((req, res, next) => {
+    console.log('post raven error handler middleware');
+    console.log(req.body);
+    next();
+  });
 
   app.listen(port, function () {
     console.log('Server listening on http://localhost:%s', port);
