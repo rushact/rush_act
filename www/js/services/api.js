@@ -23,7 +23,7 @@ var api = function ($http, dioConfig) {
           cb(null, data.data);
         })
         .catch(function(data) {
-          console.log(data);
+          console.log(data.toString());
           Raven.captureException(data);
           cb(data, null);
         });
