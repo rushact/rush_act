@@ -19,7 +19,7 @@ var BUILD_DIR = path.join(__dirname, '../.build');
 var apiDef = require(path.join(BUILD_DIR, 'api.json'));
 var apiErrorHandler = require('./middleware/api-error-handler');
 var config = require('./config');
-var ipThrottle = require('./middleware/ip-throttle');
+// var ipThrottle = require('./middleware/ip-throttle');
 var ngXsrf = require('./middleware/ng-xsrf');
 
 var Raven = require('./raven-client');
@@ -60,10 +60,8 @@ middleware(apiDef, app, function(err, middleware) {
   });
 
   // Only throttle requests to the messages endpoints
-  var pathRe = /^\/api.*\/message$/;
-  app.use(pathRe, ipThrottle(config.get('REQUEST_THROTTLING')));
-
-  console.log('lukas')
+  // var pathRe = /^\/api.*\/message$/;
+  // app.use(pathRe, ipThrottle(config.get('REQUEST_THROTTLING')));
 
   app.use(lusca({
     csrf: false,
