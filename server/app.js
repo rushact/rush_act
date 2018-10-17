@@ -33,7 +33,11 @@ app.set('views', path.join(__dirname, 'templates'));
 app.set('view engine', 'dust');
 // NOTE: this assumes you're running behind an nginx instance or other proxy
 app.enable('trust proxy');
-
+app.use((req, res, next) => {
+  console.log('I made it here');
+  console.log(req);
+  next();
+});
 app.use(serveFavicon(path.join(BUILD_DIR, 'static', config.VERSION, 'img/favicon.png')));
 // NOTE: EFF doesn't use CDNs, so rely on static serve w/ a caching layer in front of it in prod
 app.use(serveStatic(BUILD_DIR, config.get('STATIC')));
@@ -52,6 +56,12 @@ middleware(apiDef, app, function(err, middleware) {
   app.use(middleware.metadata());
   app.use(middleware.parseRequest());
   app.use(middleware.validateRequest());
+
+  app.use((req, res, next) => {
+    console.log('look at my request NOW');
+    console.log(req);
+    next();
+  });
 
   // Only throttle requests to the messages endpoints
   var pathRe = /^\/api.*\/message$/;
